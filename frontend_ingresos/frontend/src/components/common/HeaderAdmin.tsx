@@ -1,6 +1,6 @@
 import { Menu, User } from "lucide-react";
 
-export default function HeaderAdmin({toggleSidebar}: { toggleSidebar: () => void }) {
+export default function HeaderAdmin({toggleSidebar}: { toggleSidebar?: () => void }) {
   return (
     <>
       {/* Header */}

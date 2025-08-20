@@ -1,8 +1,9 @@
+import PanelComiteAdmin from "@/components/admin_panel/comite";
 
 export default function ComitePage() {
   return (
     <>
-        <div>comites de carolay </div>
+        <PanelComiteAdmin/>
     </>
   )
 }
