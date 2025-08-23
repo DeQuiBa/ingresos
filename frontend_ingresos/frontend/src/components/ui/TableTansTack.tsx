@@ -15,16 +15,21 @@ import { ChevronDown, ChevronUp, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 type TableProps<TData> = {
-  columns: ColumnDef<TData, any>[];
+  columns: ColumnDef<TData, unknown>[];
   data: TData[];
-}
 
-export default function TableTansTack<TData>({ data, columns}: TableProps<TData>) {
+};
+
+export default function TableTansTack<TData>({
+  data,
+  columns,
+}: TableProps<TData>) {
   /*  */
 
   const [sorting, setSorting] = useState([]);
   const [filtering, setFiltering] = useState("");
 
+  console.log(setSorting)
   const table = useReactTable({
     data: data,
     columns: columns,
@@ -54,13 +59,12 @@ export default function TableTansTack<TData>({ data, columns}: TableProps<TData>
               className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
-          
         </div>
 
         <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
           <div className="overflow-x-auto">
             {table.getRowModel().rows.length === 0 ? (
-              <div className="p-4 text-center text-gray-500">
+              <div className="p-4 text-center text-gray-500" >
                 No hay resultados que coincidan.
               </div>
             ) : (
@@ -96,7 +100,7 @@ export default function TableTansTack<TData>({ data, columns}: TableProps<TData>
                       className="hover:bg-gray-50 transition-colors"
                     >
                       {row.getVisibleCells().map((cell) => (
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        <td key={cell.id} className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                           {" "}
                           {flexRender(
                             cell.column.columnDef.cell,

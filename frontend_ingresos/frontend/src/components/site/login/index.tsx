@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,7 +12,7 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
 
   // para que cuando inicie sesion me lleve al dashboard
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,8 +22,7 @@ export default function Login() {
     setTimeout(() => {
       setIsLoading(false);
       alert("Login simulado existosamente");
-      router.push("/dashboard")
-
+      router.push("/dashboard");
     }, 1500);
   };
   return (
@@ -173,7 +173,7 @@ export default function Login() {
           <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-white/15 rounded-full blur-lg"></div>
 
           {/* Main Decorative Image */}
-          <img
+          <Image
             src="/modern-login-illustration.png"
             alt="Login illustration"
             className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30"

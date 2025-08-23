@@ -2,22 +2,21 @@
 import CardInfo from "@/components/common/CardInfo";
 import TableSection from "@/components/common/TableSection";
 import TableTansTack from "@/components/ui/TableTansTack";
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef, Row } from "@tanstack/react-table";
 import Link from "next/link";
 
 //TData
 type User = {
-  id: number
-  fecha: string
-  ingreso: number
-  actividad: string
-  codigo:string
-  voucher: string
-  cantidad: number
+  id: number;
+  fecha: string;
+  ingreso: number;
+  actividad: string;
+  codigo: string;
+  voucher: string;
+  cantidad: number;
 };
 
 export default function PanelComiteAdmin() {
-
   // especificamos columnas de la tabla
   const columns: ColumnDef<User>[] = [
     {
@@ -51,7 +50,7 @@ export default function PanelComiteAdmin() {
     {
       id: "acciones",
       header: "Acciones",
-      cell: ({ row }: { row: any }) => (
+      cell: ({ row }: {row : Row<User>}) => (
         <>
           <div className="flex flex-row gap-3">
             <Link href={`/comite/${row.original.id}`}>
@@ -71,11 +70,51 @@ export default function PanelComiteAdmin() {
   ];
 
   const data = [
-    { id: 1, fecha:"10-08-2003", ingreso:1240 , actividad: "una actividad", codigo:"ASD-12321",voucher:"COUCHER-SE12", cantidad:4},
-    { id: 2, fecha:"10-08-2003", ingreso:1240 , actividad: "new2", codigo:"ASD-12321",voucher:"COUCHER-SE12", cantidad:4},
-    { id: 3, fecha:"10-08-2003", ingreso:1240 , actividad: "bad bunny", codigo:"ASD-12321",voucher:"COUCHER-SE12", cantidad:4},
-    { id: 4, fecha:"10-08-2003", ingreso:1240 , actividad: "timeline", codigo:"ASD-12321",voucher:"COUCHER-SE12", cantidad:4},
-    { id: 5, fecha:"10-08-2003", ingreso:1240 , actividad: "sky", codigo:"ASD-12321",voucher:"COUCHER-SE12", cantidad:4},
+    {
+      id: 1,
+      fecha: "10-08-2003",
+      ingreso: 1240,
+      actividad: "una actividad",
+      codigo: "ASD-12321",
+      voucher: "COUCHER-SE12",
+      cantidad: 4,
+    },
+    {
+      id: 2,
+      fecha: "10-08-2003",
+      ingreso: 1240,
+      actividad: "new2",
+      codigo: "ASD-12321",
+      voucher: "COUCHER-SE12",
+      cantidad: 4,
+    },
+    {
+      id: 3,
+      fecha: "10-08-2003",
+      ingreso: 1240,
+      actividad: "bad bunny",
+      codigo: "ASD-12321",
+      voucher: "COUCHER-SE12",
+      cantidad: 4,
+    },
+    {
+      id: 4,
+      fecha: "10-08-2003",
+      ingreso: 1240,
+      actividad: "timeline",
+      codigo: "ASD-12321",
+      voucher: "COUCHER-SE12",
+      cantidad: 4,
+    },
+    {
+      id: 5,
+      fecha: "10-08-2003",
+      ingreso: 1240,
+      actividad: "sky",
+      codigo: "ASD-12321",
+      voucher: "COUCHER-SE12",
+      cantidad: 4,
+    },
   ];
 
   return (

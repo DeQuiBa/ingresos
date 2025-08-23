@@ -1,5 +1,6 @@
-import { ArrowRight, Search, Zap } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 import VoucherConsulta from "./VoucherConsulta";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,10 +23,12 @@ export default function Home() {
                 que se adaptan a ti. Más que una app, es tu compañero digital.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="group inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl">
-                  Comenzar gratis
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                <Link href="/comite_user">
+                  <button className="cursor-pointer group inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+                    Comenzar gratis
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
                 <button className="px-8 py-4 border border-slate-300 text-slate-900 rounded-xl font-semibold hover:bg-slate-100 transition-colors">
                   Mas información
                 </button>

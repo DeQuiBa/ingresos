@@ -1,5 +1,5 @@
 "use client";
-import { ColumnDef } from "@tanstack/react-table";
+import { ColumnDef, Row } from "@tanstack/react-table";
 import TableSection from "../common/TableSection";
 import TableTansTack from "../ui/TableTansTack";
 import Link from "next/link";
@@ -49,7 +49,7 @@ export default function SectionTableComite() {
     {
       id: "acciones",
       header: "Acciones",
-      cell: ({ row }: { row: any }) => (
+      cell: ({ row }: {row : Row<User>}) => (
         <>
           <div className="flex flex-row gap-3">
             <Link href={`/comite/${row.original.id}`}>
