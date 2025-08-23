@@ -31,9 +31,9 @@ export default function TableSection({
 
           {/* Estructura de la tabla - aquí irá tu tabla */}
           <div className="border border-gray-200 rounded-lg overflow-hidden">
-            <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
+            {/* <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
               <p className="text-sm text-gray-600">Aquí va tu tabla de datos</p>
-            </div>
+            </div> */}
             {children}
           </div>
         </div>
